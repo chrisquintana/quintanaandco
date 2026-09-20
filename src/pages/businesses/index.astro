@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import BusinessCard from '../../components/BusinessCard.astro';
+
+const allBusinesses = await getCollection('businesses');
+const sortedBusinesses = allBusinesses.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout>
+  <section class="py-24 px-8">
+    <h1 class="text-5xl font-serif font-bold text-charcoal mb-12 text-center">Our Businesses</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {sortedBusinesses.map((business) => (
+        <BusinessCard business={business} />
+      ))}
+    </div>
+  </section>
+</Layout>

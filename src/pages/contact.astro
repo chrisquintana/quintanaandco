@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <section class="max-w-2xl mx-auto py-24 px-8">
+    <h1 class="text-5xl font-serif font-bold text-charcoal mb-6">Let's Connect.</h1>
+    <p class="text-lg text-charcoal mb-10">Whether you're interested in one of our businesses, a potential collaboration, or simply want to connect, we'd love to hear from you.</p>
+    
+    <form class="flex flex-col gap-6" action="#" method="POST">
+      <div class="flex flex-col gap-2">
+        <label for="name" class="font-sans font-medium text-charcoal">Name</label>
+        <input type="text" id="name" name="name" required class="p-3 border border-soft-stone bg-warm-white" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="email" class="font-sans font-medium text-charcoal">Email</label>
+        <input type="email" id="email" name="email" required class="p-3 border border-soft-stone bg-warm-white" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="message" class="font-sans font-medium text-charcoal">Message</label>
+        <textarea id="message" name="message" rows="5" required class="p-3 border border-soft-stone bg-warm-white"></textarea>
+      </div>
+      <button type="submit" class="px-6 py-3 bg-charcoal text-warm-white font-sans font-medium hover:bg-muted-taupe transition-colors">Send Message</button>
+    </form>
+  </section>
+</Layout>

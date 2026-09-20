@@ -1,0 +1,31 @@
+<header class="relative flex justify-between items-center py-6 px-8 border-b border-soft-stone z-50 bg-warm-white">
+  <a href="/" class="text-2xl font-serif font-bold text-charcoal tracking-tight">QUINTANA & CO.</a>
+  
+  <!-- Mobile Menu Toggle -->
+  <button id="menu-toggle" class="md:hidden text-charcoal focus:outline-none p-2" aria-label="Toggle menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+  </button>
+
+  <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-warm-white border-b border-soft-stone md:static md:flex md:w-auto md:bg-transparent md:border-none md:gap-8 font-sans text-charcoal flex-col md:flex-row divide-y md:divide-y-0 divide-soft-stone" aria-label="Main navigation">
+    <a href="/about" class="block py-4 px-8 md:p-0 hover:bg-ivory md:hover:bg-transparent hover:text-muted-taupe text-lg md:text-base">About</a>
+    <a href="/businesses" class="block py-4 px-8 md:p-0 hover:bg-ivory md:hover:bg-transparent hover:text-muted-taupe text-lg md:text-base">Businesses</a>
+    <a href="/our-story" class="block py-4 px-8 md:p-0 hover:bg-ivory md:hover:bg-transparent hover:text-muted-taupe text-lg md:text-base">Our Story</a>
+    <a href="/journal" class="block py-4 px-8 md:p-0 hover:bg-ivory md:hover:bg-transparent hover:text-muted-taupe text-lg md:text-base">Journal</a>
+    <a href="/contact" class="block py-4 px-8 md:p-0 hover:bg-ivory md:hover:bg-transparent hover:text-muted-taupe text-lg md:text-base">Contact</a>
+  </nav>
+
+  <a href="/contact" class="hidden md:block px-6 py-3 bg-charcoal text-warm-white font-sans font-medium hover:bg-muted-taupe transition-colors">Let's Connect</a>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuToggle?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    const isExpanded = !mobileMenu?.classList.contains('hidden');
+    menuToggle?.setAttribute('aria-expanded', isExpanded.toString());
+  });
+</script>

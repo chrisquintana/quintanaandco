@@ -1,16 +1,20 @@
 ---
-import Fallback from '../components/Fallback.astro';
-import Panel from '../components/Panel.astro';
-import Quote from '../components/Quote.astro';
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/Button.astro';
 ---
 
-<Layout title="Astro Server Islands">
-	<section>
-		<h1>Astro Server Islands</h1>
-		<Quote server:defer>
-			<Fallback slot="fallback"/>
-		</Quote>
-		<Panel/>
-	</section>
+<Layout>
+  <section class="py-24 px-8 text-center">
+    <h1 class="text-6xl font-serif font-bold text-charcoal mb-6">Building businesses.<br/>Creating possibilities.</h1>
+    <p class="text-xl text-subtle-grey mb-10 max-w-2xl mx-auto">Quintana & Co. is a family-owned company building businesses, brands, and future investments with a long-term view.</p>
+    <div class="flex gap-4 justify-center">
+        <Button text="Explore Our Businesses" href="/businesses" />
+        <Button text="Our Story" variant="secondary" href="/our-story" />
+    </div>
+  </section>
+
+  <section class="py-24 px-8 bg-ivory text-center">
+    <h2 class="text-4xl font-serif font-bold text-charcoal mb-6">Different businesses. One family. One long-term vision.</h2>
+    <p class="text-lg text-charcoal max-w-3xl mx-auto">Chris and Vianca Quintana are building a portfolio of businesses and future investments shaped by family, experience, and a long-term perspective. What began as an entrepreneurial journey has grown into a broader vision: create businesses, build assets, and create opportunities that can extend beyond one generation.</p>
+  </section>
 </Layout>

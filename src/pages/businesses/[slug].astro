@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const businesses = await getCollection('businesses');
+  return businesses.map(business => ({
+    params: { slug: business.id.replace('.md', '') },
+    props: { business },
+  }));
+}
+
+const { business } = Astro.props;
+const { Content } = await render(business);
+---
+
+<Layout>
+    <article class="max-w-4xl mx-auto py-24 px-8">
+        <h1 class="text-5xl font-serif font-bold text-charcoal mb-4">{business.data.name}</h1>
+        <p class="text-muted-taupe mb-8">{business.data.category} • {business.data.status}</p>
+        <div class="prose prose-lg text-charcoal font-sans">
+            <Content />
+        </div>
+    </article>
+</Layout>
